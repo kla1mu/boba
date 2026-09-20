@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С 35-летием, Мама!</title>
+  
+  <!-- Google Fonts: Modern Clean Montserrat (No Old Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Line -->
+  <div class="scroll-progress-line" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Interactive Dynamic Cursor Spotlight Glow -->
+  <div class="cursor-spotlight" id="cursor-spotlight" aria-hidden="true"></div>
+
+  <!-- Atmospheric Deep Luxury Background (Глубокий темный фон с мягким сиянием и звездами) -->
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="bg-gradient-base"></div>
+    <div class="aurora-orb orb-lilac"></div>
+    <div class="aurora-orb orb-rose"></div>
+    <div class="aurora-orb orb-indigo"></div>
+    <div class="aurora-orb orb-gold"></div>
+    <div class="bg-stars"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <!-- Fireworks Celebration Canvas -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- Top Floating Controls Bar -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <img src="images/mom-winter.jpg" alt="Мама" class="nav-avatar-mini">
+      <span class="nav-title">Маме • 35 лет</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#letter" class="nav-link">Письмо</a>
+      <a href="#gallery" class="nav-link">Фото</a>
+      <a href="#reasons" class="nav-link">12 причин</a>
+      <a href="#cake" class="nav-link">Торт</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="music-toggle-btn" class="nav-btn" title="Фоновая музыка">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+        <div class="eq-mini-bars" id="eq-mini-bars">
+          <span class="eq-b"></span>
+          <span class="eq-b"></span>
+          <span class="eq-b"></span>
+        </div>
+        <span class="btn-text">Музыка</span>
+      </button>
+      <button id="confetti-trigger-btn" class="nav-btn nav-btn-accent" title="Запустить салют">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>Салют</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page-container">
+    
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-top-badge">
+        <span class="pulse-dot"></span>
+        <span>20 сентября • Открытка для любимой мамы</span>
+      </div>
+
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar-halo"></div>
+        <div class="hero-avatar-ring-outer"></div>
+        <div class="hero-avatar-ring"></div>
+        <div class="hero-avatar-ring-inner"></div>
+        <img src="images/mom-winter.jpg" alt="Мама" class="hero-avatar-img">
+        <div class="hero-avatar-badge">
+          <svg class="svg-icon" style="width: 13px; height: 13px; stroke: #fff;" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          35 лет
+        </div>
+      </div>
+
+      <div class="hero-number-wrap">
+        <div class="hero-number-glow" aria-hidden="true">35</div>
+        <div class="hero-number">35</div>
+      </div>
+      <h1 class="hero-title">Мама, с 35-летием!</h1>
+      <p class="hero-desc">
+        <span class="desc-highlight">Преподаватель английского</span>, <span class="desc-highlight">бегает марафоны</span> и <span class="desc-highlight">самая лучшая мама</span>. Очень тебя люблю и горжусь тобой.
+      </p>
+
+      <div class="hero-achievements">
+        <div class="achievement-pill pill-run">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M13 4v16M17 8l-4-4-4 4M9 20h8"></path>
+          </svg>
+          <span>Бег и марафоны</span>
+        </div>
+        <div class="achievement-pill pill-edu">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Преподаватель английского (100 баллов на ЕГЭ)</span>
+        </div>
+        <div class="achievement-pill pill-mom">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>Любимая мама</span>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="#letter" class="btn-primary">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Прочитать письмо</span>
+        </a>
+        <a href="#gallery" class="btn-secondary">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <span>Фотографии</span>
+        </a>
+        <a href="#cake" class="btn-secondary">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+            <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path>
+            <line x1="2" y1="21" x2="22" y2="21"></line>
+            <line x1="12" y1="7" x2="12" y2="11"></line>
+          </svg>
+          <span>Загадать желание</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. INTERACTIVE ENVELOPE / LETTER -->
+    <section id="letter" class="letter-section">
+      <div class="section-badge">
+        <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        От Гоши
+      </div>
+      <h2 class="section-title">Письмо для Мамы</h2>
+      <p class="section-subtitle">
+        Нажми на конверт, чтобы открыть письмо.
+      </p>
+
+      <div class="envelope-wrapper">
+        <div id="letter-envelope" class="envelope-card">
+          <div id="envelope-seal-area" class="envelope-seal-area">
+            <div class="envelope-flap-decor"></div>
+            <div class="wax-seal">
+              <div class="wax-seal-ring"></div>
+              <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="stroke: #fff;">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div class="envelope-hint">
+              <svg class="svg-icon" style="width: 15px; height: 15px;" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Нажми на сургучную печать, чтобы открыть письмо
+            </div>
+          </div>
+
+          <div id="unfolded-letter" class="letter-paper">
+            <div class="letter-watermark" aria-hidden="true">35</div>
+            <div class="letter-inner-border">
+              <div class="letter-header">
+                <div class="letter-crest">
+                  <svg class="svg-icon" style="width: 24px; height: 24px; stroke: #9333ea;" viewBox="0 0 24 24">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <span>Мама, с днем рождения!</span>
+                <div class="letter-date-pill">20 сентября • 35 лет</div>
+              </div>
+              <div class="letter-body">
+                <p>Мама привет!</p>
+                <p>
+                  Тебе сегодня исполняется 35 лет. Для меня ты всегда пример того, как надо уверенно учится идти к своим целям. Как ты преподаешь английский, показывает, насколько ты крутой специалист и любишь свое дело.
+                </p>
+                <p>
+                  Спасибо тебе за твою постоянную заботу, за то что ты всегда рядом, поддерживаешь меня и веришь в меня. С тобой всегда легко поговорить обо всем и посмеяться.
+                </p>
+                <p>
+                  Желаю тебе новых классных забегов, побольше свободных дней, и поменьше уроков с Татяной).
+                </p>
+              </div>
+              <div class="letter-signature-wrap">
+                <div class="letter-seal-stamp">
+                  <svg viewBox="0 0 24 24" class="svg-icon" style="width: 16px; height: 16px; stroke: #a855f7;">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  <span>С любовью</span>
+                </div>
+                <div class="letter-signature">
+                  <img src="images/gosha-handwriting.png" alt="С днем рождения! От Гоши." class="handwriting-signature-img">
+                </div>
+              </div>
+              <div class="text-center">
+                <button id="letter-close-btn" class="letter-close-btn">Свернуть письмо</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PHOTO GALLERY -->
+    <section id="gallery" class="gallery-section text-center">
+      <div class="section-badge">
+        <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+        Моменты
+      </div>
+      <h2 class="section-title">Фотографии</h2>
+
+      <div class="gallery-grid">
+        <!-- Photo 1: Active Sports Jump -->
+        <div class="photo-card js-lightbox-trigger" data-img="images/mom-active.jpg" data-title="Финиш на забеге" title="Нажми, чтобы увеличить">
+          <div class="photo-img-wrap">
+            <img src="images/mom-active.jpg" alt="Мама на финише">
+            <div class="photo-tag-pill">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+                <path d="M13 4v16M17 8l-4-4-4 4M9 20h8"></path>
+              </svg>
+              Забеги
+            </div>
+            <div class="photo-zoom-hint">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="photo-content">
+            <div class="photo-header-row">
+              <h3 class="photo-title">Финиш на забеге</h3>
+            </div>
+            <p class="photo-desc">
+              Твоя энергия и улыбка на финише. Очень крутой кадр.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo 2: Snowy Wonderland -->
+        <div class="photo-card js-lightbox-trigger" data-img="images/mom-winter.jpg" data-title="Зимняя прогулка" title="Нажми, чтобы увеличить">
+          <div class="photo-img-wrap">
+            <img src="images/mom-winter.jpg" alt="Мама на зимней прогулке">
+            <div class="photo-tag-pill">
+              <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              Зима
+            </div>
+            <div class="photo-zoom-hint">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="photo-content">
+            <div class="photo-header-row">
+              <h3 class="photo-title">Зимняя прогулка</h3>
+            </div>
+            <p class="photo-desc">
+              Спокойный день и домашний уют.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 12 REASONS WHY YOU ARE THE BEST -->
+    <section id="reasons" class="reasons-section text-center">
+      <div class="section-badge">
+        <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        12 причин
+      </div>
+      <h2 class="section-title">12 причин, почему ты лучшая мама</h2>
+      <p class="section-subtitle">
+        Простые и искренние вещи, за которые я тебя уважаю, ценю и люблю:
+      </p>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-theme="amethyst">
+          <div class="reason-num">
+            <span>01</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Твоя поддержка: ты всегда на моей стороне и веришь в меня даже когда что-то не получается.</div>
+        </div>
+
+        <div class="reason-card" data-theme="emerald">
+          <div class="reason-num">
+            <span>02</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="7" r="2.5"></circle>
+              <circle cx="6.5" cy="10" r="2"></circle>
+              <circle cx="17.5" cy="10" r="2"></circle>
+              <path d="M12 13c-2.5 0-5 1.5-5 4.5 0 1.5 1.5 2.5 5 2.5s5-1 5-2.5c0-3-2.5-4.5-5-4.5z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Любовь к животным: Ты очень сильно любишь всех зверей.</div>
+        </div>
+
+        <div class="reason-card" data-theme="indigo">
+          <div class="reason-num">
+            <span>03</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Репетиторство: ты реально круто преподаешь английский и вкладываешь душу в учеников.</div>
+        </div>
+
+        <div class="reason-card" data-theme="rose">
+          <div class="reason-num">
+            <span>04</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="reason-text">В свои 35 лет ты отлично выглядишь, всегда на спорте и полна сил.</div>
+        </div>
+
+        <div class="reason-card" data-theme="amber">
+          <div class="reason-num">
+            <span>05</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">С тобой всегда можно спокойно поговорить обо всем и спросить честный совет.</div>
+        </div>
+
+        <div class="reason-card" data-theme="gold">
+          <div class="reason-num">
+            <span>06</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <div class="reason-text">Твое чувство юмора: с тобой всегда можно от души посмеяться и разрядить любую обстановку.</div>
+        </div>
+
+        <div class="reason-card" data-theme="magenta">
+          <div class="reason-num">
+            <span>07</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="reason-text">Твоя выносливость: ты успеваешь бегать, преподавать, учить других и уделять время мне с Варей и дому.</div>
+        </div>
+
+        <div class="reason-card" data-theme="cyan">
+          <div class="reason-num">
+            <span>08</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Твой английский язык: прикольно слушать то как ты преподаешь, можно что то запомнить крутое.</div>
+        </div>
+
+        <div class="reason-card" data-theme="lavender">
+          <div class="reason-num">
+            <span>09</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Твое терпение и умение сохранять спокойствие и находить решения в трудных ситуациях.</div>
+        </div>
+
+        <div class="reason-card" data-theme="warmth">
+          <div class="reason-num">
+            <span>10</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div class="reason-text">Уют и тепло дома: место куда всегда приятно возвращаться.</div>
+        </div>
+
+        <div class="reason-card" data-theme="coral">
+          <div class="reason-num">
+            <span>11</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </div>
+          <div class="reason-text">Твоя забота: ты всегда интересуешься моими делами и замечаешь каждую мелочь.</div>
+        </div>
+
+        <div class="reason-card" data-theme="diamond">
+          <div class="reason-num">
+            <span>12</span>
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+            </svg>
+          </div>
+          <div class="reason-text">Ты просто классный человек и самая лучшая мама. Ценю тебя и очень люблю.</div>
+        </div>
+      </div>
+
+      <!-- Interactive compliment generator -->
+      <div class="compliment-generator">
+        <div class="compliment-badge">
+          <svg class="svg-icon" style="width: 13px; height: 13px;" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          Тёплые слова
+        </div>
+        <h3 class="compliment-title">Копилка слов для мамы</h3>
+        <div id="compliment-text" class="compliment-box">
+          «Мама, марафон и 100 баллов твоих учеников - это очень круто. Ты пример для меня.»
+        </div>
+        <button id="new-compliment-btn" class="btn-primary btn-compliment">
+          <svg class="svg-icon" viewBox="0 0 24 24">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+          <span>Показать еще</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 5. INTERACTIVE CAKE & MAKE A WISH -->
+    <section id="cake" class="cake-section">
+      <div class="section-badge">
+        <svg class="svg-icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24">
+          <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+          <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path>
+          <line x1="2" y1="21" x2="22" y2="21"></line>
+          <line x1="12" y1="7" x2="12" y2="11"></line>
+        </svg>
+        35 лет
+      </div>
+      <h2 class="section-title">Загадай желание</h2>
+      <p class="section-subtitle">
+        Тебе 35 лет, впереди еще куча всего интересного. Подумай о том, чего ты сама очень хочешь, и задувай свечи.
+      </p>
+
+      <div class="cake-container">
+        <!-- Ambient cake glow aura -->
+        <div class="cake-glow-backdrop"></div>
+
+        <div class="cake-stage">
+          <div class="cake-visual" id="cake-visual">
+            <!-- 3D Golden Sparkler Topper "35" -->
+            <div class="cake-topper-sparkler" title="35 лет!">
+              <div class="topper-number">35</div>
+              <div class="topper-stem"></div>
+              <div class="sparkler-sparks">
+                <span class="spark s1">✦</span>
+                <span class="spark s2">★</span>
+                <span class="spark s3">✦</span>
+                <span class="spark s4">★</span>
+              </div>
+            </div>
+
+            <!-- Top Tier: Vanilla Buttercream, Cream Rosettes, Embedded Candles & Vector Berries -->
+            <div class="cake-tier tier-top">
+              <div class="tier-top-surface"></div>
+              
+              <!-- 5 Deluxe Interactive Candles: naturally embedded in top tier -->
+              <div class="candles-row" id="candles-row">
+                <div class="candle c1" data-candle="1" role="button" tabindex="0" title="Задуть свечу 1">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame">
+                    <div class="flame-inner"></div>
+                    <div class="flame-halo"></div>
+                  </div>
+                  <div class="candle-smoke"></div>
+                  <div class="candle-body"></div>
+                  <div class="candle-stand-collar"></div>
+                </div>
+                <div class="candle c2" data-candle="2" role="button" tabindex="0" title="Задуть свечу 2">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame">
+                    <div class="flame-inner"></div>
+                    <div class="flame-halo"></div>
+                  </div>
+                  <div class="candle-smoke"></div>
+                  <div class="candle-body"></div>
+                  <div class="candle-stand-collar"></div>
+                </div>
+                <div class="candle c3" data-candle="3" role="button" tabindex="0" title="Задуть свечу 3">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame">
+                    <div class="flame-inner"></div>
+                    <div class="flame-halo"></div>
+                  </div>
+                  <div class="candle-smoke"></div>
+                  <div class="candle-body"></div>
+                  <div class="candle-stand-collar"></div>
+                </div>
+                <div class="candle c4" data-candle="4" role="button" tabindex="0" title="Задуть свечу 4">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame">
+                    <div class="flame-inner"></div>
+                    <div class="flame-halo"></div>
+                  </div>
+                  <div class="candle-smoke"></div>
+                  <div class="candle-body"></div>
+                  <div class="candle-stand-collar"></div>
+                </div>
+                <div class="candle c5" data-candle="5" role="button" tabindex="0" title="Задуть свечу 5">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame">
+                    <div class="flame-inner"></div>
+                    <div class="flame-halo"></div>
+                  </div>
+                  <div class="candle-smoke"></div>
+                  <div class="candle-body"></div>
+                  <div class="candle-stand-collar"></div>
+                </div>
+              </div>
+
+              <div class="tier-creams">
+                <span class="cream-puff" style="left: 10%;"></span>
+                <span class="cake-berry berry-strawberry" style="left: 20%;">
+                  <svg viewBox="0 0 20 22" class="berry-svg" aria-hidden="true">
+                    <defs>
+                      <radialGradient id="sbGrad1" cx="35%" cy="30%" r="65%">
+                        <stop offset="0%" stop-color="#ff758f"/>
+                        <stop offset="45%" stop-color="#e11d48"/>
+                        <stop offset="85%" stop-color="#9f1239"/>
+                        <stop offset="100%" stop-color="#4c0519"/>
+                      </radialGradient>
+                      <radialGradient id="sbShine1" cx="30%" cy="25%" r="40%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <path d="M10 20.5C6.5 20.5 3.5 15.5 3.5 10.5C3.5 6 6 4.5 10 4.5C14 4.5 16.5 6 16.5 10.5C16.5 15.5 13.5 20.5 10 20.5Z" fill="url(#sbGrad1)"/>
+                    <ellipse cx="7" cy="9" rx="3" ry="1.5" transform="rotate(-30 7 9)" fill="url(#sbShine1)"/>
+                    <circle cx="6.5" cy="12.5" r="0.65" fill="#fef08a"/>
+                    <circle cx="12.5" cy="11.5" r="0.65" fill="#fef08a"/>
+                    <circle cx="9.5" cy="15.5" r="0.65" fill="#fef08a"/>
+                    <path d="M10 4.5C8.5 2 6 2.8 6 2.8C7.5 4 8.5 4.3 10 4.5C11.5 4.3 12.5 4 14 2.8C14 2.8 11.5 2 10 4.5Z" fill="#10b981"/>
+                    <path d="M10 4.5V1.5" stroke="#10b981" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="cream-puff" style="left: 36%;"></span>
+                <span class="cake-berry berry-blueberry" style="left: 50%;">
+                  <svg viewBox="0 0 18 18" class="berry-svg" aria-hidden="true">
+                    <defs>
+                      <radialGradient id="bbGrad1" cx="35%" cy="30%" r="65%">
+                        <stop offset="0%" stop-color="#a5b4fc"/>
+                        <stop offset="40%" stop-color="#6366f1"/>
+                        <stop offset="80%" stop-color="#3730a3"/>
+                        <stop offset="100%" stop-color="#1e1b4b"/>
+                      </radialGradient>
+                      <radialGradient id="bbShine1" cx="30%" cy="25%" r="40%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <circle cx="9" cy="9" r="7.5" fill="url(#bbGrad1)"/>
+                    <circle cx="9" cy="5.2" r="1.8" fill="#1e1b4b"/>
+                    <path d="M9 3.8L9.4 4.8L10.4 5L9.6 5.8L9.8 6.8L9 6.2L8.2 6.8L8.4 5.8L7.6 5L8.6 4.8Z" fill="#312e81"/>
+                    <ellipse cx="6.5" cy="7" rx="2.5" ry="1.3" transform="rotate(-30 6.5 7)" fill="url(#bbShine1)"/>
+                  </svg>
+                </span>
+                <span class="cream-puff" style="left: 64%;"></span>
+                <span class="cake-berry berry-strawberry" style="left: 80%;">
+                  <svg viewBox="0 0 20 22" class="berry-svg" aria-hidden="true">
+                    <path d="M10 20.5C6.5 20.5 3.5 15.5 3.5 10.5C3.5 6 6 4.5 10 4.5C14 4.5 16.5 6 16.5 10.5C16.5 15.5 13.5 20.5 10 20.5Z" fill="url(#sbGrad1)"/>
+                    <ellipse cx="7" cy="9" rx="3" ry="1.5" transform="rotate(-30 7 9)" fill="url(#sbShine1)"/>
+                    <circle cx="6.5" cy="12.5" r="0.65" fill="#fef08a"/>
+                    <circle cx="12.5" cy="11.5" r="0.65" fill="#fef08a"/>
+                    <circle cx="9.5" cy="15.5" r="0.65" fill="#fef08a"/>
+                    <path d="M10 4.5C8.5 2 6 2.8 6 2.8C7.5 4 8.5 4.3 10 4.5C11.5 4.3 12.5 4 14 2.8C14 2.8 11.5 2 10 4.5Z" fill="#10b981"/>
+                    <path d="M10 4.5V1.5" stroke="#10b981" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="cream-puff" style="left: 90%;"></span>
+              </div>
+              <div class="tier-drips tier-drips-top">
+                <svg class="tier-drip-svg" viewBox="0 0 184 32" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="topDripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="70%" stop-color="#fffdf5"/>
+                      <stop offset="100%" stop-color="#fef3c7"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0,0 L 184,0 L 184,7 C 176,7 172,17 165,17 C 158,17 155,9 148,9 C 141,9 137,25 128,25 C 119,25 116,10 108,10 C 100,10 97,20 89,20 C 81,20 78,8 70,8 C 62,8 58,26 48,26 C 38,26 35,11 27,11 C 19,11 16,19 7,17 L 0,12 Z" fill="url(#topDripGrad)"/>
+                  <ellipse cx="48" cy="22" rx="4" ry="2.2" fill="#ffffff" opacity="0.95"/>
+                  <ellipse cx="128" cy="21" rx="3.5" ry="2" fill="#ffffff" opacity="0.95"/>
+                  <ellipse cx="89" cy="16" rx="3" ry="1.8" fill="#ffffff" opacity="0.9"/>
+                  <ellipse cx="165" cy="14" rx="3" ry="1.8" fill="#ffffff" opacity="0.9"/>
+                </svg>
+              </div>
+              <div class="gold-leaf-flakes">
+                <span class="gl-flake gl-1"></span>
+                <span class="gl-flake gl-2"></span>
+              </div>
+              <div class="tier-pearls">
+                <span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span>
+              </div>
+            </div>
+
+            <!-- Middle Tier: Velvet Rose, Ledge Rosettes, Vector Berries -->
+            <div class="cake-tier tier-middle">
+              <div class="tier-surface tier-middle-surface"></div>
+              <div class="tier-creams middle-creams">
+                <span class="cream-puff" style="left: 6%;"></span>
+                <span class="cake-berry berry-blueberry" style="left: 12%;">
+                  <svg viewBox="0 0 18 18" class="berry-svg" aria-hidden="true">
+                    <circle cx="9" cy="9" r="7.5" fill="url(#bbGrad1)"/>
+                    <circle cx="9" cy="5.2" r="1.8" fill="#1e1b4b"/>
+                    <ellipse cx="6.5" cy="7" rx="2.5" ry="1.3" transform="rotate(-30 6.5 7)" fill="url(#bbShine1)"/>
+                  </svg>
+                </span>
+                <span class="cake-berry berry-strawberry" style="left: 88%;">
+                  <svg viewBox="0 0 20 22" class="berry-svg" aria-hidden="true">
+                    <path d="M10 20.5C6.5 20.5 3.5 15.5 3.5 10.5C3.5 6 6 4.5 10 4.5C14 4.5 16.5 6 16.5 10.5C16.5 15.5 13.5 20.5 10 20.5Z" fill="url(#sbGrad1)"/>
+                    <ellipse cx="7" cy="9" rx="3" ry="1.5" transform="rotate(-30 7 9)" fill="url(#sbShine1)"/>
+                    <circle cx="6.5" cy="12.5" r="0.65" fill="#fef08a"/>
+                    <circle cx="12.5" cy="11.5" r="0.65" fill="#fef08a"/>
+                    <path d="M10 4.5C8.5 2 6 2.8 6 2.8C7.5 4 8.5 4.3 10 4.5C11.5 4.3 12.5 4 14 2.8C14 2.8 11.5 2 10 4.5Z" fill="#10b981"/>
+                  </svg>
+                </span>
+                <span class="cream-puff" style="left: 94%;"></span>
+              </div>
+              <div class="tier-drips tier-drips-middle">
+                <svg class="tier-drip-svg" viewBox="0 0 236 36" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="midDripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fff1f2"/>
+                      <stop offset="65%" stop-color="#fecdd3"/>
+                      <stop offset="100%" stop-color="#fda4af"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0,0 L 236,0 L 236,8 C 227,8 223,21 215,21 C 207,21 204,10 196,10 C 187,10 183,28 172,28 C 161,28 158,11 148,11 C 138,11 134,23 125,23 C 116,23 113,9 103,9 C 93,9 89,30 77,30 C 65,30 62,12 51,12 C 40,12 36,24 26,24 C 17,24 14,11 0,14 Z" fill="url(#midDripGrad)"/>
+                  <ellipse cx="77" cy="26" rx="4.5" ry="2.3" fill="#ffffff" opacity="0.9"/>
+                  <ellipse cx="172" cy="24" rx="4.5" ry="2.3" fill="#ffffff" opacity="0.9"/>
+                  <ellipse cx="125" cy="19" rx="3.5" ry="2" fill="#ffffff" opacity="0.85"/>
+                  <ellipse cx="215" cy="17" rx="3.5" ry="2" fill="#ffffff" opacity="0.85"/>
+                </svg>
+              </div>
+              <div class="gold-leaf-flakes">
+                <span class="gl-flake gl-3"></span>
+                <span class="gl-flake gl-4"></span>
+                <span class="gl-flake gl-5"></span>
+              </div>
+              <div class="tier-pearls">
+                <span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span>
+              </div>
+            </div>
+
+            <!-- Bottom Tier: Royal Velvet Ganache & Scalloped Swags -->
+            <div class="cake-tier tier-bottom">
+              <div class="tier-surface tier-bottom-surface"></div>
+              <div class="tier-drips tier-drips-bottom">
+                <svg class="tier-drip-svg" viewBox="0 0 282 40" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="botDripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fae8ff"/>
+                      <stop offset="60%" stop-color="#f0abfc"/>
+                      <stop offset="100%" stop-color="#e879f9"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0,0 L 282,0 L 282,9 C 271,9 267,24 255,24 C 243,24 240,11 229,11 C 218,11 214,33 201,33 C 188,33 185,13 173,13 C 162,13 158,26 147,26 C 136,26 132,10 120,10 C 108,10 104,35 90,35 C 76,35 73,14 60,14 C 48,14 44,28 32,28 C 21,28 18,12 0,16 Z" fill="url(#botDripGrad)"/>
+                  <ellipse cx="90" cy="30" rx="5" ry="2.5" fill="#ffffff" opacity="0.9"/>
+                  <ellipse cx="201" cy="28" rx="5" ry="2.5" fill="#ffffff" opacity="0.9"/>
+                  <ellipse cx="147" cy="22" rx="4" ry="2" fill="#ffffff" opacity="0.85"/>
+                  <ellipse cx="255" cy="20" rx="4" ry="2" fill="#ffffff" opacity="0.85"/>
+                </svg>
+              </div>
+              <div class="gold-leaf-flakes">
+                <span class="gl-flake gl-6"></span>
+                <span class="gl-flake gl-7"></span>
+                <span class="gl-flake gl-8"></span>
+                <span class="gl-flake gl-9"></span>
+              </div>
+              <div class="tier-pearls bottom-pearls">
+                <span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span><span class="pearl"></span>
+              </div>
+            </div>
+
+            <!-- Crystal & Gold Pedestal Stand with Reflections -->
+            <div class="cake-pedestal">
+              <div class="pedestal-plate"></div>
+              <div class="pedestal-rim"></div>
+              <div class="pedestal-reflection"></div>
+            </div>
+            
+            <!-- Ambient Golden Sparkle Dust around Cake -->
+            <div class="cake-magic-aura" aria-hidden="true">
+              <span class="aura-dust d1">✦</span>
+              <span class="aura-dust d2">★</span>
+              <span class="aura-dust d3">✦</span>
+              <span class="aura-dust d4">★</span>
+              <span class="aura-dust d5">✦</span>
+              <span class="aura-dust d6">✦</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-hint-text">
+          <span class="hint-sparkle">✨</span> Нажми на каждую свечу или задуй все разом кнопкой!
+        </div>
+
+        <div class="cake-controls-row">
+          <button id="blow-candles-btn" class="btn-primary btn-blow">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
+            </svg>
+            <span>Задуть все свечи</span>
+          </button>
+
+          <button id="relight-candles-btn" class="btn-secondary btn-relight" style="display: none;">
+            <svg class="svg-icon" viewBox="0 0 24 24">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>Зажечь свечи снова ✨</span>
+          </button>
+        </div>
+
+        <div id="wish-modal" class="wish-modal">
+          <div class="wish-icon">
+            <svg class="svg-icon svg-icon-lg" viewBox="0 0 24 24" style="stroke: #fde047;">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="wish-title">Пусть всё задуманное сбудется!</div>
+          <p class="wish-text">
+            Мама, пусть этот год принесет тебе новые классные забеги, побольше свободных дней, отличных учеников и побольше поводов для радости. 
+            С днем рождения!
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-box">
+      <button id="lightbox-close-btn" class="lightbox-close-btn" title="Закрыть">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Фотография">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>С днем рождения, Мама! От Гоши.</p>
+    <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.7;">35 лет</p>
+  </footer>
+
+<!-- Secret Easter Egg Overlay -->
+<div id="easter-egg-overlay" class="easter-egg-overlay" aria-hidden="true">
+  <div class="easter-egg-backdrop"></div>
+  <div class="easter-egg-content">
+    <div class="ee-ribbons">
+      <div class="ee-ribbon ee-ribbon-left"></div>
+      <div class="ee-ribbon ee-ribbon-right"></div>
+    </div>
+    <div class="ee-message">
+      <div class="ee-title" id="ee-typewriter"></div>
+      <div class="ee-subtitle" id="ee-subtitle">35 лет — это только начало!</div>
+    </div>
+  </div>
+</div>
+
+<!-- Confetti Canvas -->
+<canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
